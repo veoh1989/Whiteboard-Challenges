@@ -8,7 +8,7 @@ exports.final = function finalNum(arr){
   });
   return {
     max: Math.max(...unique_array),
-    runnerUp: unique_array[unique_array.length -2]
+    runnerUp: unique_array[unique_array.length -2],
   };
 };
 
