@@ -1,25 +1,30 @@
 'use strict';
 
 const solution = require('../lib/solution');
+require('jest');
 
-describe('Solution Module', function() {
-  describe('#Solution', function() {
-    var x = ["mike", "sue", "tom", "kathy", "henry"]
-    var y = ["howey", "jim", "sue", "jennifer", "kathy", "hank", "alex"]
-    it('expects the solution module to return null when supplied string values ', function() {
-      expect(solution(x,y)).toBe(null);
+let one = ['mike', 'sue', 'tom', 'kathy', 'henry'];
+let two = ['howey', 'jim', 'sue', 'jennifer', 'kathy', 'hank', 'alex'];
+let expectedArray = ['sue', 'kathy'];
+let oneWrong = [1, 'sue', 'tom', 'kathy', 'henry'];
+let twoWrong = [1, 'jim', 'sue', 'jennifer', 'kathy', 'hank', 'alex'];
+
+describe ('solution module', function () {
+  describe ('#solution intersections', function () {
+    it ('the solution module should return an array with the intersections', function () {
+      expect (solution.final(one, two)).toEqual(expectedArray);
     });
 
-    it('expects the solution module to be an array', function() {
-      expect(solution('puppies')).toBe(null);
+    it ('the solution module should return an array', function () {
+      expect(solution.final(one, two)).toBeInstanceOf(Array);
     });
 
-    it('expects the solution module to have max and runnerUp', function() {
-      expect(solution([1, 2, 3, 4, 5, 5])).toEqual({max: 5, runnerUp: 4});
+    it('expects the solution module to not contain only two strings', function() {
+      expect(solution.final(oneWrong, twoWrong)).toBe(null);
     });
 
-    it('expects the solution module to not contain only two numbers', function() {
-      expect(solution([])).toBe(null);
-      expect(solution([1])).toBe(null);
+    it('expects the solution module to not not be null', function() {
+      expect(solution.final(one, two)).not.toBe(null);
     });
   });
+});

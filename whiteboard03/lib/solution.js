@@ -1,23 +1,13 @@
 'use strict';
 
-// exports.final = function finalArray(arr){
-//   if (!arr || !Array.isArray(arr) || arr.length < 2) return null;
-//   for (let i in arr) if (typeof arr[i] !== 'number') return null;
-//   let unique_array = Array.from(new Set(arr)).sort(function sortNumber(a,b) {
-//     return a - b;
-//   });
-//   return {
-//     max: Math.max(...unique_array),
-//     runnerUp: unique_array[unique_array.length -2]
-//   };
-// };
+exports.final = function finalArray(arr,arr2){
+  if (!arr || !Array.isArray(arr)) return null;
+  for (let i in arr) if (typeof arr[i] !== 'string') return null;
 
-var x = ["mike", "sue", "tom", "kathy", "henry"]
-var y = ["howey", "jim", "sue", "jennifer", "kathy", "hank", "alex"]
+  var z = arr.filter(function(val) {
+    return arr2.indexOf(val) != -1;
+  });
 
-var z = x.filter(function(val) {
-  return y.indexOf(val) != -1;
-});
+  return z;
 
-console.log('stuff',z);
-
+};
