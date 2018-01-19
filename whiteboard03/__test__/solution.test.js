@@ -3,13 +3,12 @@
 const solution = require('../lib/solution');
 require('jest');
 
-let one = ['mike', 'sue', 'tom', 'kathy', 'henry'];
-let two = ['howey', 'jim', 'sue', 'jennifer', 'kathy', 'hank', 'alex'];
-let expectedArray = ['sue', 'kathy'];
-let oneWrong = [1, 'sue', 'tom', 'kathy', 'henry'];
-let twoWrong = [1, 'jim', 'sue', 'jennifer', 'kathy', 'hank', 'alex'];
-
 describe ('solution module', function () {
+  let one = ['mike', 'sue', 'tom', 'kathy', 'henry'];
+  let two = ['howey', 'jim', 'sue', 'jennifer', 'kathy', 'hank', 'alex'];
+  let expectedArray = ['sue', 'kathy'];
+  let oneWrong = [1, 'sue', 'tom', 'kathy', 'henry'];
+  let twoWrong = [1, 'jim', 'sue', 'jennifer', 'kathy', 'hank', 'alex'];
   describe ('#solution intersections', function () {
     it ('the solution module should return an array with the intersections', function () {
       expect (solution.final(one, two)).toEqual(expectedArray);
