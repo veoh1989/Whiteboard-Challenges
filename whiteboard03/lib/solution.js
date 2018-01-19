@@ -1,7 +1,7 @@
 'use strict';
 
 exports.traverse = function train(engine){
-  let tot = 0;
+  let total = 0;
 
   if (!engine ) return null;
   if (typeof engine !== 'object') return null;
@@ -10,7 +10,7 @@ exports.traverse = function train(engine){
     let keys = Object.keys(tmp);
     if (!keys.includes('value') || !keys.includes('next')) return null;
     if (typeof tmp.value !== 'number') return null;
-    tot += tmp.value;
+    total += tmp.value;
   }
-  return tot;
+  return total;
 };
