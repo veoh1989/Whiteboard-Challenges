@@ -6,7 +6,7 @@ exports.loop = function (count, cb) {
     return;
   }
   cb();
-  loop (count--, cb);
+  exports.loop (--count, cb);
 }
 
 // O(n)

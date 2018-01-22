@@ -12,8 +12,10 @@ describe('Solution Module', function() {
       expect(solution.loop(-1)).toBeNull();
     });
 
-    
-
-
+    it('should run and increment a variable count times', () => {
+      let x = 0;
+      solution.loop(2, () => x++);
+      expect(x).toBe(2);
+    });
   });
 });
