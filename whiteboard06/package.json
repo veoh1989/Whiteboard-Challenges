@@ -10,5 +10,9 @@
     "test": "jest"
   },
   "author": "Liza Oh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
 }
