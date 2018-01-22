@@ -27,7 +27,7 @@ exports.loop = function (count, cb) {
         // IF: is count 0?
         // YES, count is 0
           // ok, return undefined
-          //notes from Jordan
+          //notes from Jordans
 
 //while loop
 //let loop = function (count, callback) {
