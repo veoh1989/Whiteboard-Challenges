@@ -1,10 +1,11 @@
 'use strict';
 
-let loop = function (count, cb) {
+exports.loop = function (count, cb) {
+  if (typeof count !== 'number' || count < 0) return null;
   if (count === 0) {
     return;
   }
-  callback();
+  cb();
   loop (count--, cb);
 }
 
