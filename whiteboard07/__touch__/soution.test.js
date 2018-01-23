@@ -16,8 +16,8 @@ describe('Solution Module', function() {
       expect(solution.circle(nodeObj)).toBe(true);
     });
 
-    it('should be an object', () => {
-      expect(solution.circle('stringstuff')).toBe(null);
+    it('should return null if not an object', () => {
+      expect(solution.circle('this is not an object!')).toBe(null);
     });
   });
 });

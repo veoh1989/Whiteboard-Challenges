@@ -1,7 +1,7 @@
 'use strict';
 
 exports.circle = function (list) {
-  if(typeof circle !== 'object') return null;
+  if(typeof list !== 'object') return null;
   let slow = list, fast = list;
   while (fast.next && fast.next.next) {
     slow = slow.next;
