@@ -1,16 +1,16 @@
 'use strict';
 
-module.exports = (n) => {
+module.exports = (n, list) => {
   if(typeof n !== 'number') return null;
-  let currentNode = this.head;
+  let currentNode = list.head;
   let length = 0;
 
-  while(currentNode !==null){
+  while(currentNode.next !==null){
     length++;
     currentNode = currentNode.next;
   }
   if (n > length) return null;
-  currentNode = this.head;
+  currentNode = list.head;
   let distance = length -n;
   while(distance > 0)  {
     distance--;
