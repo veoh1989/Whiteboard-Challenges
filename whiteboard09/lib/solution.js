@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = (n) => {
+  if(typeof n !== 'number') return null;
   let currentNode = this.head;
   let length = 0;
 
