@@ -8,12 +8,12 @@ describe('Solution Module', () => {
       expect(solution.binarySearch([1, 2, 3, 4, 5, 6], 6)).toBe('Your item 6 is at index 5.');
     });
 
-    // it('should return correct output', () => {
-    //   expect(binarySearch(3, nodeObj)).toEqual(validObj);
-    // });
+    it('second argument should be a number', () => {
+      expect(solution.binarySearch([1, 2, 3, 4, 5, 6], '9')).toBe('Invalid argument.');
+    });
 
-    // it('should return a null if offset is out of range', () => {
-    //   expect(binarySearch(9, nodeObj)).toBeNull();
-    // });
+    it('second argument should be a number', () => {
+      expect(solution.binarySearch('[1, 2, 3, 4, 5, 6]', 9)).toBe('Invalid argument.');
+    });
   });
 });
