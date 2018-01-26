@@ -1,0 +1,17 @@
+{
+  "name": "whiteboard09",
+  "version": "1.0.0",
+  "description": "Write a function which accepts n and a linked list as it's arguments, and will return the nth from last node in a linked list",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Liza Oh",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.1.4"
+  }
+}
