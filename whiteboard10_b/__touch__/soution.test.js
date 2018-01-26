@@ -1,22 +1,22 @@
 'use strict';
 
-const findNth = require('../lib/solution');
-
-let nodeObj = {head: {value: 4, next: {value: 3, next: {value: 2, next: {value: 1, next: {value: 0, next: null}}}}}};
-let validObj = {next: {next: {next: {next: null, value: 0}, value: 1}, value: 2}, value: 3};
+const solution = require('../lib/solution');
 
 describe('Solution Module', () => {
-  describe('#FindNth', () => {
-    it('should return null if n is not a number', () => {
-      expect(findNth('this is not a number')).toBeNull();
+  describe('#checkBraces', () => {
+    it('should return the correct output', () => {
+      expect(solution.checkBraces('{{}{}{}}}')).toBe('Incorrect braces.');
+      expect(solution.checkBraces('{{}{}{}}')).toBe('Your braces are correct.');
     });
 
-    it('should return correct output', () => {
-      expect(findNth(3, nodeObj)).toEqual(validObj);
+    it('type of argument should be a string', () => {
+      expect(solution.checkBraces(2)).toBe('Invalid argument.');
+      expect(solution.checkBraces('{}')).toBe('Your braces are correct.');
     });
 
-    it('should return a null if offset is out of range', () => {
-      expect(findNth(9, nodeObj)).toBeNull();
+    it('string in argument should contain braces', () => {
+      expect(solution.checkBraces('just string')).toBe('Your string did not have any braces.' );
+      expect(solution.checkBraces('{}')).toBe('Your braces are correct.');
     });
   });
 });
