@@ -1,1 +1,1 @@
-Write a function which accepts n and a linked list as it's arguments, and will return the nth from last node in a linked list
+Write a function checkBraces() to examine whether the pairs and the orders of { and } are correct in a string, using a Stack.
