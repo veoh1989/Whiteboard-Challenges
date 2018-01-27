@@ -1,20 +1,18 @@
 'use strict';
 
-module.exports = (n, list) => {
-  if(typeof n !== 'number') return null;
-  let currentNode = list.head;
-  let length = 0;
-
-  while(currentNode.next !==null){
-    length++;
-    currentNode = currentNode.next;
+exports.checkBraces = str => {
+  if (typeof str !== 'string') return 'Invalid argument.';
+  let arr = [];
+  let num = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === '{') {
+      arr.push('{');
+      num++;
+    }
+    else if (str[i] === '}') {
+      if (!arr.length) return 'Incorrect braces.';
+      arr.pop();
+    }
   }
-  if (n > length) return null;
-  currentNode = list.head;
-  let distance = length -n;
-  while(distance > 0)  {
-    distance--;
-    currentNode = currentNode.next;
-  }
-  return currentNode;
+  return !num ? 'Your string did not have any braces.' : !arr.length ? 'Your braces are correct.' : 'Incorrect braces.';
 };
