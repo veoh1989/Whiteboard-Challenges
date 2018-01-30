@@ -15,12 +15,6 @@ describe('Queue Data Structure Module', function () {
     it('should have a default value of null assigned to the last property', () => {
       expect(this.queue.last).toBeNull();
     });
-    it('should have a default value of 0 assigned to the size property', () => {
-      expect(this.queue.size).toEqual(0);
-    });
-    it('should have a maxSize property with a default value of 1048', () => {
-      expect(this.queue.maxSize).toEqual(1048);
-    });
   });
 
   describe('#enqueue', () => {

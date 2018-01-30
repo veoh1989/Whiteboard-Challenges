@@ -1,28 +1,30 @@
 'use strict';
 
 const Stack = require('./stack');
+const Node = require('./node');
 
-module.exports = function Queue() {
-  let inbox = new Stack();
-  let outbox = new Stack();
+module.exports = class {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.newOne = new Stack();
+    this.newTwo = new Stack();
+  }
 
-  this.enqueue = function() {
-    inbox.push.apply(inbox, arguments);
-  };
+  enqueue(value) {
+    let node = new Node (value);
 
-  this.dequeue = function() {
-    if (outbox.size() === 0) {
-      while (inbox.size())
-        outbox.push(inbox.pop());
-    }
-    return outbox.pop();
-  };
+    this.newOne.last ? this.newOne.last.next = node : this.newOne.first = node;
+    this.newOne.last = node;
 
-  this.size = function(){
-    return inbox.size() + outbox.size();
-  };
+    this.newTwo
 
-  this.peek = function() {
-    return outbox.peek();
-  };
+    return this;
+  }
+
+  dequeue() {
+
+
+    return this;
+  }
 };

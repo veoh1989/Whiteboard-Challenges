@@ -1,21 +1,37 @@
 'use strict';
 
-module.exports = function Stack() {
-  let arr = [];
+const Node = require('./node');
 
-  this.push = function() {
-    arr.push.apply(arr, arguments);
-  };
+module.exports = class {
+  constructor(maxSize=1048) {
+    this.top = null;
+    this.maxSize = maxSize;
+    this.size = 0;
+  }
+  push(value) {
+    if(this.size === this.maxSize) throw new Error('Stack overflow!');
 
-  this.pop = function() {
-    return arr.pop.apply(arr, arguments);
-  };
+    let node = new Node(value);
 
-  this.size = function() {
-    return arr.length;
-  };
+    node.next = this.top;
+    this.top = node;
+    this.size++;
+    return this.top;
+    //Big-O: O(1)
+  }
 
-  this.peek = function() {
-    return arr;
-  };
+  pop() {
+    let temp = this.top;
+    this.top = temp.next;
+    temp.next = null;
+    this.size--;
+
+    return temp;
+    //Big-O: O(1)
+  }
+
+  peek() {
+    return this.top;
+    //Big-O: O(1)
+  }
 };
