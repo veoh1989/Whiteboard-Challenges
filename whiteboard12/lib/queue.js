@@ -1,37 +1,28 @@
 'use strict';
 
-const Node = require('./node');
+const Stack = require('./stack');
 
-module.exports = class {
-  constructor() {
-    this.first = null; //front
-    this.last = null; //back
-    this.maxSize = 1048;
-    this.size = 0;
-  }
+module.exports = function Queue() {
+  let inbox = new Stack();
+  let outbox = new Stack();
 
-  enqueue(value) {
-    if (this.size === this.maxSize) throw new Error ('This is an error');
+  this.enqueue = function() {
+    inbox.push.apply(inbox, arguments);
+  };
 
-    let node = new Node (value);
+  this.dequeue = function() {
+    if (outbox.size() === 0) {
+      while (inbox.size())
+        outbox.push(inbox.pop());
+    }
+    return outbox.pop();
+  };
 
-    this.last ? this.last.next = node : this.first = node;
-    this.last = node;
+  this.size = function(){
+    return inbox.size() + outbox.size();
+  };
 
-    this.size++;
-
-    return this.first;
-    //Big-O: O(1)
-  }
-
-  dequeue() {
-    let temp = this.first;
-    this.first = this.first.next;
-
-    temp.next = null;
-    this.size --;
-
-    return temp;
-    //Big-O: O(1)
-  }
+  this.peek = function() {
+    return outbox.peek();
+  };
 };
