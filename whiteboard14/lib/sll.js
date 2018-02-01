@@ -1,6 +1,6 @@
 'use strict';
 
-const Nd = require('../lib/nd');
+const Nd = require('../lib/node');
 
 class SLL {
   constructor() {

@@ -1,7 +1,7 @@
 'use strict';
 
 const SLL = require ('../lib/sll');
-const ND = require('../lib/nd');
+const ND = require('../lib/node');
 
 
 describe('SLL module', function() {
