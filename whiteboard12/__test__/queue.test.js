@@ -2,44 +2,18 @@
 
 const Queue = require('../lib/queue');
 
-describe('Queue Data Structure Module', function () {
-  beforeEach(() => this.queue = new Queue());
+let test = new Queue;
+let empty = new Queue;
 
-  describe('default properties', () => {
-    it('should create a new instance of a queue', () => {
-      expect(this.queue).toBeInstanceOf(Queue);
-    });
-    it('should have a default value of null assigned to the first property', () => {
-      expect(this.queue.first).toBeNull();
-    });
-    it('should have a default value of null assigned to the last property', () => {
-      expect(this.queue.last).toBeNull();
-    });
-  });
 
-  describe('#enqueue', () => {
-    it('should add a new node with the value of 1 to the back of the queue', () => {
-      this.queue.enqueue(1);
-      expect(this.queue.last.value).toEqual(1);
-    });
-    it('should have the correct size', () => {
-      [1, 2, 3, 4, 5, 6, 7, 8].map((x, y) => this.queue.enqueue(~~(Math.random() * y)));
-      expect(this.queue.size).toEqual(8);
-    });
-    it('throw an error when maxSize is met', () => {
-      expect(() => {
-        [...Array(2000)].map((x, y) => this.queue.enqueue(~~(Math.random() * y)));
-      }).toThrow('This is an error');
-    });
+describe('two queue', () => {
+  test.enqueue(1);
+  test.enqueue(2);
+  test.enqueue(3);
+  it('should add an item to the enqueuing stack', () => {
+    expect(test.enqueue(10)).toBe('10 was added');
+    expect(test.enqueue(200)).toBe('200 was added');
+    expect(test.enqueue(3000)).toBe('3000 was added');
   });
-
-  describe('#dequeue', () => {
-    it('should remove the node from the queue', () => {
-      this.queue.enqueue(10);
-      this.queue.enqueue(20);
-      expect(this.queue.first.value).toEqual(10);
-      expect(this.queue.dequeue().value).toEqual(10);
-      expect(this.queue.first.value).toEqual(20);
-    });
-  });
+ 
 });

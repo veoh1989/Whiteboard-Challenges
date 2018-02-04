@@ -1,30 +1,24 @@
 'use strict';
 
 const Stack = require('./stack');
-const Node = require('./node');
 
 module.exports = class {
   constructor() {
-    this.first = null;
-    this.last = null;
-    this.newOne = new Stack();
-    this.newTwo = new Stack();
+    this.in = new Stack();
+    this.out = new Stack();
   }
 
   enqueue(value) {
-    let node = new Node (value);
-
-    this.newOne.last ? this.newOne.last.next = node : this.newOne.first = node;
-    this.newOne.last = node;
-
-    this.newTwo
-
-    return this;
+    this.in.push(value);
+    return `${value} was added`;
   }
 
   dequeue() {
-
-
-    return this;
+    if(!this.out.head){
+      while(this.head) {
+        this.out.push(this.in.pop());
+      }
+    }
+    return this.out.pop();
   }
 };

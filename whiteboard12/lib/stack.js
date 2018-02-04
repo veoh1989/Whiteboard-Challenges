@@ -26,7 +26,7 @@ module.exports = class {
     temp.next = null;
     this.size--;
 
-    return temp;
+    return temp.value;
     //Big-O: O(1)
   }
 
