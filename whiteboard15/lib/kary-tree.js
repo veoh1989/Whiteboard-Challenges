@@ -23,11 +23,9 @@ const K_ary = module.exports = class {
 
     while(queue.back) {
       current = queue.dequeue();
-
-      console.log('current', current);
       callback(current);
 
-      current.value.children.map(c => queue.enqueue(c));
+      current.children.map(c => queue.enqueue(c));
     }
   }
 
@@ -41,19 +39,12 @@ const K_ary = module.exports = class {
     }
 
     this.breadthFirst(node => {
-      if(parent === node.value.value) {
-        node.value.children.push(tn);
+      if(parent === node.value) {
+        node.children.push(tn);
         return;
       }
     });
 
     return this;
-  }
-
-  // Removals
-  removeByVal(value) {
-    if(!this.root) return null;
-    
-    
   }
 };

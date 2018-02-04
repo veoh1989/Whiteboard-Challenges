@@ -12,8 +12,10 @@ solution.tree = function(root) {
 
   while(newQ.back) {
     current = newQ.dequeue();
-    if(!current.value.children) result.push(current.value);
-    current.value.children.map(child => newQ.enqueue(child));
+    newQ = current.root;
+    if(!current.children) result.push(current.value);
+    //console.log(current.root);
+    current.children.map(child => newQ.enqueue(child));
   }
   return result;
 };
