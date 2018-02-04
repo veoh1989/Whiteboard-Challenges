@@ -9,13 +9,14 @@ module.exports = class {
   }
 
   enqueue(value) {
+    if (value === null) return 'Cannot be null';
     this.in.push(value);
     return `${value} was added`;
   }
 
   dequeue() {
-    if(!this.out.head){
-      while(this.head) {
+    if(!this.out.top){
+      while(this.in.top) {
         this.out.push(this.in.pop());
       }
     }

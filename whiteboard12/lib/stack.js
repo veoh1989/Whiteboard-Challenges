@@ -24,7 +24,7 @@ module.exports = class {
     let temp = this.top;
     this.top = temp.next;
     temp.next = null;
-    this.size--;
+    //this.size--;
 
     return temp.value;
     //Big-O: O(1)
