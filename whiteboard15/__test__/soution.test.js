@@ -15,9 +15,9 @@ describe('#solution module', function() {
     expect(solution.tree('this is a string')).toBeNull();
   });
   it('should be correct output', function() {
-    expect(solution.tree(test)).toEqual([4,9]);
+    expect(solution.tree(test.root)).toEqual([4]);
   });
-  // it('should add only null children', function() {
-  //   expect(solution.tree(test3)).toEqual([51]);
-  // });
+  it('should return null if root is not an object', function() {
+    expect(solution.tree('test3')).toBeNull();
+  });
 });

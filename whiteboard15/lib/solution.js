@@ -1,6 +1,6 @@
 'use strict';
 
-const Queue = require('../lib/queue');
+const Queue = require('./queue');
 const solution = module.exports = {};
 
 solution.tree = function(root) {
@@ -10,11 +10,10 @@ solution.tree = function(root) {
   let result = [];
   newQ.enqueue(root);
 
+
   while(newQ.back) {
     current = newQ.dequeue();
-    newQ = current.root;
-    if(!current.children) result.push(current.value);
-    //console.log(current.root);
+    if(!current.children[0]) result.push(current.value);
     current.children.map(child => newQ.enqueue(child));
   }
   return result;

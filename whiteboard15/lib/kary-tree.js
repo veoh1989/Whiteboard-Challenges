@@ -23,6 +23,8 @@ const K_ary = module.exports = class {
 
     while(queue.back) {
       current = queue.dequeue();
+
+      // console.log('current', current);
       callback(current);
 
       current.children.map(c => queue.enqueue(c));
