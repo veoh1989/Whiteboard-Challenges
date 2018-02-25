@@ -1,0 +1,17 @@
+{
+  "name": "whiteboard27",
+  "version": "1.0.0",
+  "description": "Given a 2-dimensional array of numbers, rotate the array 90 degrees.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.4.2"
+  }
+}
