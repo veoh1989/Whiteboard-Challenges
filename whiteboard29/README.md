@@ -8,7 +8,4 @@ sortAnagrams(['acre', 'act', 'race', 'cat', 'tac', 'care'])
 => ['acre', 'care', 'race', 'act', 'cat', 'tac', ]
 Once all the words have been grouped into lists by anagram we can put them back into the array.
 
-Write at least four tests for this function
-
-your tests should cover basic (expected) functionality
-your tests should consider edge cases for your function (ex: will your function still operate on an array of floating point integers?)
+credit to https://blog.anthonycomito.com/answer-the-anagram-interview-question-with-es6-c7621e43596d for the help!
