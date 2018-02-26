@@ -1,0 +1,17 @@
+{
+  "name": "whiteboard30",
+  "version": "1.0.0",
+  "description": "Write a function that will intersect two arrays",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Liza",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.4.2"
+  }
+}
