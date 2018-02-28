@@ -1,0 +1,17 @@
+{
+  "name": "whiteboard33",
+  "version": "1.0.0",
+  "description": "Write a function while takes two arguments, a base number and an exponential, and returns the sum of the return value's digits.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Liza",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.4.2"
+  }
+}
